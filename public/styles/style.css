@@ -1,0 +1,44 @@
+header{
+    display: flex;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    padding: 20px;  
+}
+.nav-links{
+    flex: 3;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.links-style-header{
+    padding-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+.logo-container{
+    flex: 1;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    padding-right: 10px;
+    height: 25%;
+}
+.icons-header{
+    flex: 1;
+    text-align: right;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    padding-right: 10px;
+    color: white;
+}
+/*colores #ffb13d*/
