@@ -6,8 +6,26 @@ nav{
     align-items: center;
     justify-content: flex-start;
 }
+
+.header-links{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+.search-bar{
+    border: #fbff00 2px solid;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+}
 .link-container{
-    border: #ffffff 2px solid;
+    flex: 3;
+    color: #ffffff;
+    text-decoration: none;
+    border: #8d9700 2px solid;
     display: flex;
     align-items: center;
     text-align: center;
@@ -16,9 +34,10 @@ nav{
     height: 100%;
     margin-left: 20px;
 }
-a{
-    color: #ffffff;
-    text-decoration: none;
-    padding: 14px 16px;
-    font-size: 17px;
+.form-control{
+    border: none;
+    height: 70%;
+    width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
 }

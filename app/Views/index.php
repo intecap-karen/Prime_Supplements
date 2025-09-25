@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?=base_url('styles/style.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Prime Suplements</title>
 </head>
 
@@ -14,10 +15,23 @@
     <header>
         <nav>
             <div class="link-container">
-                <a href="<?=base_url('/')?>">Inicio</a>
-                <a href="<?=base_url('productos')?>">Productos</a>
-                <a href="<?=base_url('nosotros')?>">Nosotros</a>
-                <a href="<?=base_url('contactos')?>">Contacto</a>
+                <a href="<?=base_url('/')?>" class="header-links">Inicio</a>
+                <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
+                <a href="<?=base_url('nosotros')?>" class="header-links">Nosotros</a>
+                <a href="<?=base_url('contactos')?>" class="header-links">Contacto</a>
+            </div>
+            <div class="search-bar">
+                <div class="btn-group" role="group" aria-label="Default button group">
+                    <button type="button" class="btn btn-outline-primary">
+                        <i class="bi bi-basket3-fill"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                    </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Buscar">
+                <i class="bi bi-search"></i>
+
             </div>
         </nav>
     </header>
