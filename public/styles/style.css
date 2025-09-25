@@ -13,7 +13,6 @@ nav{
     padding: 14px 16px;
 }
 .search-bar{
-    border: #fbff00 2px solid;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -25,7 +24,6 @@ nav{
     flex: 3;
     color: #ffffff;
     text-decoration: none;
-    border: #8d9700 2px solid;
     display: flex;
     align-items: center;
     text-align: center;
