@@ -23,19 +23,27 @@
                 <a href="<?=base_url('nosotros')?>" class="header-links">Nosotros</a>
             </div>
             <div class="search-bar">
-                <div class="btn-group" role="group" aria-label="Default button group">
-                    <button type="button" class="btn btn-outline-primary">
-                        <i class="bi bi-basket3-fill"></i>
-                    </button>
-                    <button type="button" class="btn btn-outline-primary">
-                        <i class="bi bi-box-arrow-in-right"></i>
-                    </button>
-                </div>
                 <input type="text" class="form-control" placeholder="Buscar">
                 <i class="bi bi-search"></i>
-
+            </div>
+            <div class="btn-group" role="group" aria-label="Default button group">
+                <button type="button" class="btn btn-outline-primary">
+                    <i class="bi bi-basket3-fill"></i>
+                </button>
+                <button type="button" class="btn btn-outline-primary">
+                    <i class="bi bi-person-fill"></i></i>
+                </button>
             </div>
         </nav>
+        <div class="social-network-bar">
+            Siguenos en nuestras redes sociales y forma parte de nuestra comunidad
+            <div class="social-icon-container">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-twitter-x"></i>
+            </div>
+
+        </div>
     </header>
     <main>
         <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
@@ -67,15 +75,6 @@
         <hr>
 
     </main>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
