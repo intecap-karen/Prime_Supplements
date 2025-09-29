@@ -14,11 +14,13 @@
 <body>
     <header>
         <nav>
+            <img src="<?=base_url('images/logo.png')?>" alt="Logo de la empresa" class="logo">
+            Prime Supplements
             <div class="link-container">
-                <a href="<?=base_url('/')?>" class="header-links">Inicio</a>
+                <a href="<?=base_url('/')?>" class="header-links">Categorias</a>
+                <a href="<?=base_url('marcas')?>" class="header-links">Marcas</a>
                 <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
                 <a href="<?=base_url('nosotros')?>" class="header-links">Nosotros</a>
-                <a href="<?=base_url('contactos')?>" class="header-links">Contacto</a>
             </div>
             <div class="search-bar">
                 <div class="btn-group" role="group" aria-label="Default button group">
