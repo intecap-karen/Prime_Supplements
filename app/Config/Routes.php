@@ -7,11 +7,11 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-$routes->get('inicio', 'Home::categorias');
-$routes->get('inicio', 'Home::marcas');
-$routes->get('inicio', 'Home::productos');
-$routes->get('inicio', 'Home::nosotros');
-$routes->get('inicio', 'Home::carrito');
+$routes->get('categorias', 'Home::categorias');
+$routes->get('marcas', 'Home::marcas');
+$routes->get('productos', 'Home::productos');
+$routes->get('nosotros', 'Home::nosotros');
+$routes->get('carrito', 'Home::carrito');
 $routes->get('inicio', 'Productos::descripcion/$1');
 $routes->get('inicio', 'Home::reseñas');
 $routes->get('inicio', 'Home::facturacion');
