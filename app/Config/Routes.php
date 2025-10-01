@@ -17,10 +17,10 @@ $routes->post('modificar_estado', 'EstadoController::modificar');
 
 /*Clientes*/
 $routes->get('clientes', 'ClientesController::index');
-$routes->post('agregar_cliente', 'ClienteController::agregar');
-$routes->get('eliminar_cliente', 'ClienteController::eliminar');
-$routes->get('buscar_cliente', 'ClienteController::buscar');
-$routes->post('modificar_cliente', 'ClienteController::modificar');
+$routes->post('agregar_cliente', 'ClientesController::agregar');
+$routes->get('eliminar_cliente/(:num)', 'ClientesController::eliminar/$1');
+$routes->get('buscar_cliente/(:num)', 'ClientesController::buscar/$1');
+$routes->post('modificar_cliente', 'ClientesController::modificar');
 
 /*metodo_pago*/
 $routes->get('metodos_pago', 'MetodoPagoController::index');
