@@ -14,6 +14,4 @@ class ClientesModel extends Model
         'apellido', 
         'fecha_nac'
     ];
-     //protected $returnType =\App\Entities\User::class;
-    //protected $useTimestamps = true;
 }

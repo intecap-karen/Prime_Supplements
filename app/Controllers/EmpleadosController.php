@@ -16,14 +16,15 @@ class EmpleadosController extends BaseController
     {
         $empleado = new EmpleadosModel();
         $datos = [
-            'dpi_empleado' => $this->request->getPost('id_empleado'),
+            'dpi_empleado' => $this->request->getPost('dpi_empleado'),
+            'contrasenia' => $this->request->getPost('pwd_empleado'),
             'email' => $this->request->getPost('txt_email'),
-            'contrasenia' => $this->request->getPost('pwd_cliente'),
             'nombre' => $this->request->getPost('txt_nombre'),
             'apellido' => $this->request->getPost('txt_apellido'),
             'rol_id' => $this->request->getPost('rol_id'),
         ];
         $empleado->insert($datos);
+
         return redirect()->route('empleados');
     }
 
@@ -46,9 +47,9 @@ class EmpleadosController extends BaseController
     public function modificar()
     {
         $datos = [
-            'dpi_empleado' => $this->request->getPost('id_empleado'),
+            'dpi_empleado' => $this->request->getPost('dpi_empleado'),
+            'contrasenia' => $this->request->getPost('pwd_empleado'),
             'email' => $this->request->getPost('txt_email'),
-            'contrasenia' => $this->request->getPost('pwd_cliente'),
             'nombre' => $this->request->getPost('txt_nombre'),
             'apellido' => $this->request->getPost('txt_apellido'),
             'rol_id' => $this->request->getPost('rol_id'),

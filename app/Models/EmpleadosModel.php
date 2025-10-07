@@ -14,6 +14,4 @@ class EmpleadosModel extends Model
         'apellido',
         'rol_id'
     ];
-     //protected $returnType =\App\Entities\User::class;
-    //protected $useTimestamps = true;
 }
