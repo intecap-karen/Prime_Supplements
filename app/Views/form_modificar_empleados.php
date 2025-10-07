@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Categorias | Prime Suplements</title>
+    <title>Modificar Empleados | Prime Suplements</title>
 </head>
 
 <body>
@@ -46,39 +46,33 @@
     </header>
     <main>
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-4 offset-4">
-                    <h1>Modificar Empleado</h1>
-                    <form action="<?=base_url('modificar_empleado')?>" method="post">
-                        <label for="id_empleado" class="form-label">Empleado ID</label>
-                        <input type="number" name="id_empleado" id="id_empleado" class="form-control"
-                            value="<?=$datos['dpi_empleado'];?>" readonly>
-                        
-                        <label for="pwd_cliente" class="form-label">Contraseña</label>
-                        <input type="password" name="pwd_cliente" id="pwd_cliente" class="form-control"
-                            value="<?=$datos['contrasenia'];?>">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <h1>Modificar Empleados</h1>
+                <form action="<?=base_url('modificar_empleado')?>" method="post">
+                    <label for="dpi_empleado" class="form-label">DPI Empleado</label>
+                    <input type="text" name="dpi_empleado" id="dpi_empleado" class="form-control" value="<?=$datos['dpi_empleado'];?>" readonly>
 
-                        <label for="txt_email" class="form-label">Email</label>
-                        <input type="email" name="txt_email" id="txt_email" class="form-control"
-                            value="<?=$datos['email'];?>">
+                    <label for="pwd_empleado" class="form-label">Contraseña</label>
+                    <input type="password" name="pwd_empleado" id="pwd_empleado" class="form-control" value="<?=$datos['contrasenia'];?>"  >
 
-                        <label for="txt_nombre" class="form-label">Nombre</label>
-                        <input type="text" name="txt_nombre" id="txt_nombre" class="form-control"
-                            value="<?=$datos['nombre'];?>">
+                    <label for="txt_email" class="form-label">Email</label>
+                    <input type="email" name="txt_email" id="txt_email" class="form-control" value="<?=$datos['email'];?>">
+                    
+                    <label for="txt_nombre" class="form-label">Nombre</label>
+                    <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" value="<?=$datos['nombre'];?>">
 
-                        <label for="txt_apellido" class="form-label">Apellido</label>
-                        <input type="text" name="txt_apellido" id="txt_apellido" class="form-control"
-                            value="<?=$datos['apellido'];?>">
-                            
-                        <label for="rol_id" class="form-label">Rol ID</label>
-                        <input type="number" name="rol_id" id="rol_id" class="form-control"
-                            value="<?=$datos['rol_id'];?>">
+                    <label for="txt_apellido" class="form-label">Apellido</label>
+                    <input type="text" name="txt_apellido" id="txt_apellido" class="form-control" value="<?=$datos['apellido'];?>">
 
-                        <button type="submit" class="form-control btn btn-secondary mt-3">Modificar Datos</button>
-                    </form>
-                </div>
+                    <label for="rol_id" class="form-label">Rol ID</label>
+                    <input type="text" name="rol_id" id="rol_id" class="form-control" value="<?=$datos['rol_id'];?>">
+                    
+                    <button type="submit" class="form-control btn btn-secondary mt-3">Modificar Datos</button>
+                </form>
             </div>
         </div>
+    </div>
     </main>
 
 
@@ -88,6 +82,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
     </script>
+
+    
 </body>
 
 </html>
