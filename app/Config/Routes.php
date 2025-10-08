@@ -22,6 +22,7 @@ $routes->get('eliminar_cliente', 'ClienteController::eliminar');
 $routes->get('buscar_cliente', 'ClienteController::buscar');
 $routes->post('modificar_cliente', 'ClienteController::modificar');
 
+
 /*metodo_pago*/
 $routes->get('metodos_pago', 'MetodoPagoController::index');
 $routes->post('agregar_metodo_pago', 'MetodoPagoController::agregar');
@@ -43,6 +44,8 @@ $routes->get('eliminar_pedido', 'PedidoController::eliminar');
 $routes->get('buscar_pedido', 'PedidoController::buscar');
 $routes->post('modificar_pedido', 'PedidoController::modificar');
 
+
+
 /*detalle pedidos*/
 $routes->get('detalle_pedidos', 'DetallePedidoController::index');
 $routes->post('agregar_detalle_pedido', 'DetallePedidoController::agregar');
@@ -63,6 +66,12 @@ $routes->post('agregar_empleado', 'EmpleadoController::agregar');
 $routes->get('eliminar_empleado', 'EmpleadoController::eliminar');
 $routes->get('buscar_empleado', 'EmpleadoController::buscar');
 $routes->post('modificar_empleado', 'EmpleadoController::modificar');
+$routes->get('empleado/verPedidos', 'EmpleadoController::verPedidos');
+$routes->post('asignar_pedido', 'EmpleadoController::asignar');
+$routes->get('pedidos_asignados', 'EmpleadoController::verAsignados');
+$routes->get('empleado/detallePedido/(:num)', 'EmpleadoController::detallePedido/$1');
+
+
 
 /*marcas*/
 $routes->get('marcas', 'MarcaController::index');
@@ -84,3 +93,16 @@ $routes->post('agregar_rol', 'RolController::agregar');
 $routes->get('eliminar_rol', 'RolController::eliminar');
 $routes->get('buscar_rol', 'RolController::buscar');
 $routes->post('modificar_rol', 'RolController::modificar');
+
+
+/*Login*/
+$routes->get('login_cliente', 'LoginClienteController::index');
+$routes->post('login_cliente', 'LoginClienteController::login');
+$routes->get('login_empleado', 'LoginEmpleadoController::index');
+$routes->post('login_empleado', 'LoginEmpleadoController::loginempleado');
+$routes->get('logout', 'LoginEmpleadoController::logout');
+
+
+/*registro*/
+$routes->get('registrar_cliente', 'RegistroController::index');
+$routes->post('registrar_cliente', 'RegistroController::registrarCliente');
