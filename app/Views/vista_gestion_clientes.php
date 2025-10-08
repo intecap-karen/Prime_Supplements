@@ -113,10 +113,10 @@
                             <td><?= $cliente['apellido'] ?></td>
                             <td><?= $cliente['fecha_nac'] ?></td>
                             <td>
-                                <a href="<?= base_url('eliminar_cliente/') . $cliente['cliente_id'] ?>"
-                                    class="btn btn-danger"><i class="bi bi-trash-fill "></i></a>
-                                <a href="<?= base_url('buscar_cliente/') . $cliente['cliente_id'] ?>"
-                                    class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
+                                <button data-url="<?= base_url('eliminar_cliente/') . $cliente['cliente_id'] ?>"
+                                    class="btn btn-danger btn-eliminar"><i class="bi bi-trash-fill"></i></button>
+                                <button data-url="<?= base_url('buscar_cliente/') . $cliente['cliente_id'] ?>"
+                                    class="btn btn-secondary btn-modificar"><i class="bi bi-pencil-square"></i></button>
                             </td>
                         </tr>
                         <?php }; ?>
@@ -126,13 +126,59 @@
         </div>
 
     </main>
-
-
+    <!-- SweetAlert2 y Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
+    </script>
+    <!-- Script para manejar los botones de eliminar y modificar con SweetAlert2 -->
+    <script>
+        // Botón Eliminar
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".btn-eliminar").forEach(btn => {
+            btn.addEventListener("click", function() {
+                const url = this.getAttribute("data-url");
+                Swal.fire({
+                    title: "¿Estás seguro?",
+                    text: "No podrás revertir esta acción.",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Sí, eliminar",
+                    cancelButtonText: "Cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = url; // Redirige al eliminar
+                    }
+                });
+            });
+        });
+
+        // Botón Modificar
+        document.querySelectorAll(".btn-modificar").forEach(btn => {
+            btn.addEventListener("click", function() {
+                const url = this.getAttribute("data-url");
+                Swal.fire({
+                    title: "¿Deseas modificar este registro?",
+                    text: "Serás redirigido al formulario de edición.",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#aaa",
+                    confirmButtonText: "Sí, continuar",
+                    cancelButtonText: "Cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = url; // Redirige al modificar
+                    }
+                });
+            });
+        });
+    });
     </script>
 </body>
 
