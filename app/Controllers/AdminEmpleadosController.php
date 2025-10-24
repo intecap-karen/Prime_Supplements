@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\EmpleadosModel;
+use App\Models\AdminEmpleadosModel;
 
-class EmpleadosController extends BaseController
+class AdminEmpleadosController extends BaseController
 {
     public function index()
     {
-        $empleado = new EmpleadosModel();
+        $empleado = new AdminEmpleadosModel();
         $datos['empleados'] = $empleado->findAll();
         return view('vista_gestion_empleados', $datos);
     }
 
     public function agregar()
     {
-        $empleado = new EmpleadosModel();
+        $empleado = new AdminEmpleadosModel();
         $datos = [
             'dpi_empleado' => $this->request->getPost('dpi_empleado'),
             'contrasenia' => $this->request->getPost('pwd_empleado'),
@@ -30,7 +30,7 @@ class EmpleadosController extends BaseController
 
     public function eliminar($id) 
     {
-        $empleado = new EmpleadosModel();
+        $empleado = new AdminEmpleadosModel();
         $empleado->delete($id);
         //dos formas de redireccionar 
         return redirect()->route('empleados');
@@ -39,7 +39,7 @@ class EmpleadosController extends BaseController
 
     public function buscar($id)
     {
-        $empleado = new EmpleadosModel();
+        $empleado = new AdminEmpleadosModel();
         $datos['datos']=$empleado->where(['dpi_empleado'=>$id])->first();
         return view ('form_modificar_empleados', $datos);
     }
@@ -54,7 +54,7 @@ class EmpleadosController extends BaseController
             'apellido' => $this->request->getPost('txt_apellido'),
             'rol_id' => $this->request->getPost('rol_id'),
         ];
-        $empleado= new EmpleadosModel();
+        $empleado= new AdminEmpleadosModel();
         $empleado->update($datos['dpi_empleado'], $datos);
         return redirect()->route('empleados');
     }

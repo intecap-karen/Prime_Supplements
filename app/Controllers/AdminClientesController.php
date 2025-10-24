@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\ClientesModel;
+use App\Models\AdminClientesModel;
 
-class ClientesController extends BaseController
+class AdminClientesController extends BaseController
 {
     public function index()
     {
-        $cliente = new ClientesModel();
+        $cliente = new AdminClientesModel();
         $datos['clientes'] = $cliente->findAll();
         return view('vista_gestion_clientes', $datos);
     }
 
     public function agregar()
     {
-        $cliente = new ClientesModel();
+        $cliente = new AdminClientesModel();
         $datos = [
             'cliente_id' => $this->request->getPost('id_cliente'),
             'email' => $this->request->getPost('txt_email'),
@@ -29,7 +29,7 @@ class ClientesController extends BaseController
 
     public function eliminar($id) 
     {
-        $cliente = new ClientesModel();
+        $cliente = new AdminClientesModel();
         $cliente->delete($id);
         //dos formas de redireccionar 
         return redirect()->route('clientes');
@@ -38,7 +38,7 @@ class ClientesController extends BaseController
 
     public function buscar($id)
     {
-        $cliente = new ClientesModel();
+        $cliente = new AdminClientesModel();
         $datos['datos']=$cliente->where(['cliente_id'=>$id])->first();
         return view ('form_modificar_clientes', $datos);
     }
@@ -53,7 +53,7 @@ class ClientesController extends BaseController
             'apellido' => $this->request->getPost('txt_apellido'),
             'fecha_nac' => $this->request->getPost('dt_nacimiento'),
         ];
-        $cliente= new ClientesModel();
+        $cliente= new AdminClientesModel();
         $cliente->update($datos['cliente_id'], $datos);
         return redirect()->route('clientes');
     }

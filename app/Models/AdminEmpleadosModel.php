@@ -2,7 +2,7 @@
 
 namespace App\Models;
 use CodeIgniter\Model;
-class EmpleadosModel extends Model
+class AdminEmpleadosModel extends Model
 {
     protected $table = 'empleado';
     protected $primaryKey = 'dpi_empleado';

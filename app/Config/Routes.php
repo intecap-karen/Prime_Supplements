@@ -16,11 +16,11 @@ $routes->get('buscar_estado', 'EstadoController::buscar');
 $routes->post('modificar_estado', 'EstadoController::modificar');
 
 /*Clientes*/
-$routes->get('clientes', 'ClientesController::index');
-$routes->post('agregar_cliente', 'ClientesController::agregar');
-$routes->get('eliminar_cliente', 'ClientesController::eliminar');
-$routes->get('buscar_cliente', 'ClientesController::buscar');
-$routes->post('modificar_cliente', 'ClientesController::modificar');
+$routes->get('clientes', 'AdminClientesController::index');
+$routes->post('agregar_cliente', 'AdminClientesController::agregar');
+$routes->get('eliminar_cliente/(:num)', 'AdminClientesController::eliminar/$1');
+$routes->get('buscar_cliente/(:num)', 'AdminClientesController::buscar/$1');
+$routes->post('modificar_cliente', 'AdminClientesController::modificar');
 
 
 /*metodo_pago*/
@@ -61,13 +61,13 @@ $routes->get('buscar_producto', 'ProductoController::buscar');
 $routes->post('modificar_producto', 'ProductoController::modificar');
 
 /*empleado*/
-$routes->get('empleados', 'EmpleadosController::index');
-$routes->post('agregar_empleado', 'EmpleadosController::agregar');
-$routes->get('eliminar_empleado', 'EmpleadosController::eliminar');
-$routes->get('buscar_empleado', 'EmpleadosController::buscar');
-$routes->post('modificar_empleado', 'EmpleadosController::modificar');
-$routes->get('empleado/verPedidos', 'EmpleadosController::verPedidos');
+$routes->get('empleados', 'AdminEmpleadosController::index');
+$routes->post('agregar_empleado', 'AdminEmpleadosController::agregar');
+$routes->get('eliminar_empleado', 'AdminEmpleadosController::eliminar/$1');
+$routes->get('buscar_empleado', 'AdminEmpleadosController::buscar');
+$routes->post('modificar_empleado', 'AdminEmpleadosController::modificar');
 
+$routes->get('empleado/verPedidos', 'EmpleadoController::verPedidos');
 $routes->get('empleado/detallePedido/(:num)', 'EmpleadoController::detallePedido/$1');
 $routes->get('pedidos_asignados', 'EmpleadoController::verAsignados');
 $routes->post('asignar_a_mensajero', 'EmpleadoController::asignarAMensajero');
