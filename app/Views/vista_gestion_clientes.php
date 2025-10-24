@@ -20,7 +20,8 @@
                 <a href="<?=base_url('categorias')?>" class="header-links">Categorias</a>
                 <a href="<?=base_url('marcas')?>" class="header-links">Marcas</a>
                 <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
-                <a href="<?=base_url('nosotros')?>" class="header-links">Nosotros</a>
+                <a href="<?=base_url('clientes')?>" class="header-links">Clientes</a>
+                <a href="<?=base_url('empleados')?>" class="header-links">Empleados</a>
             </div>
             <div class="search-bar">
                 <input type="text" class="form-control" placeholder="Buscar">
@@ -64,6 +65,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <!-- Formulario para agregar clientes -->
                                 <form action="<?= base_url('agregar_cliente') ?>" method="post">
                                     <label for="id_cliente" class="form-label">Cliente ID</label>
                                     <input type="number" name="id_cliente" id="id_cliente" class="form-control">
@@ -91,6 +93,7 @@
                 </div>
             </div>
             <div>
+                <!-- tabla donde muestra los datos de los clientes -->
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -103,15 +106,19 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
+                    <!-- Tabla dinámica con datos de clientes -->
                     <tbody>
                         <?php foreach ($clientes as $cliente){?>
                         <tr>
                             <td><?= $cliente['cliente_id'] ?></td>
                             <td><?= $cliente['email'] ?></td>
+                            <!-- Mostrar solo los primeros 10 caracteres del hash de la contraseña -->
                             <td><?= substr(hash('sha256', $cliente['contrasenia']), 0, 10) ?></td>
                             <td><?= $cliente['nombre'] ?></td>
                             <td><?= $cliente['apellido'] ?></td>
                             <td><?= $cliente['fecha_nac'] ?></td>
+
+                            <!-- Botones de acción para eliminar y modificar -->
                             <td>
                                 <button data-url="<?= base_url('eliminar_cliente/') . $cliente['cliente_id'] ?>"
                                     class="btn btn-danger btn-eliminar"><i class="bi bi-trash-fill"></i></button>

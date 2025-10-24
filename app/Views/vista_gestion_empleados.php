@@ -21,7 +21,8 @@
                 <a href="<?=base_url('categorias')?>" class="header-links">Categorias</a>
                 <a href="<?=base_url('marcas')?>" class="header-links">Marcas</a>
                 <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
-                <a href="<?=base_url('nosotros')?>" class="header-links">Nosotros</a>
+                <a href="<?=base_url('clientes')?>" class="header-links">Clientes</a>
+                <a href="<?=base_url('empleados')?>" class="header-links">Empleados</a>
             </div>
             <div class="search-bar">
                 <input type="text" class="form-control" placeholder="Buscar">
@@ -66,6 +67,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+                                <!-- Formulario para agregar empleados -->
                                 <form action="<?= base_url('agregar_empleado') ?>" method="post" id="formEmpleado">
                                     <label for="dpi_empleado" class="form-label">DPI Empleado</label>
                                     <input type="number" name="dpi_empleado" id="dpi_empleado" class="form-control">
@@ -94,7 +96,7 @@
                 </div>
             </div>
             <div>
-                <!-- Tabla de empleados -->
+                <!-- tabla donde muestra los datos de los empleados -->
                 <table class="table table-striped">
                     <thead>
                         <tr>
