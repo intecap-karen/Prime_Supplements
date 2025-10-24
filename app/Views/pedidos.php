@@ -12,6 +12,51 @@
 
     <title> Pedidos</title>
 </head>
+<style>
+
+table.table-bordered thead th {
+    background-color: #b0b0b0; /* gris medio suave */
+    color: #212529; /* texto gris oscuro para buen contraste */
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 700; /* texto más grueso */
+    letter-spacing: 0.5px; /* mejora legibilidad */
+}
+
+    /* Celdas del cuerpo de la tabla */
+    table.table-bordered tbody td {
+        background-color: #afbccaff; /* azul muy claro */
+        color: #003366;
+        vertical-align: middle;
+    }
+
+    /* Hover en filas */
+    table.table-bordered tbody tr:hover {
+        background-color: #d0e4f5; /* azul más intenso al pasar el mouse */
+    }
+
+    /* Título centrado */
+    h2.text-center {
+        color: #dbdbdbff;
+        font-weight: 600;
+        border-bottom: 2px solid #cce5ff;
+        padding-bottom: 8px;
+    }
+
+    /* Botón de asignar */
+    .btn-warning {
+        font-weight: 500;
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+</style>
+
 
 <?php // Leer datos
 $id_empleado = session()->get('dpi_empleado');
@@ -47,7 +92,9 @@ if (!session()->has('dpi_empleado')) {
             </div>
         </nav>
     </header>
-
+<br>
+<h2 class="text-center mb-2">Pedidos pendientes</h2>
+<br>
 
 
     <!--tabla de pedidos-->
@@ -74,14 +121,18 @@ if (!session()->has('dpi_empleado')) {
                 <td><?= $pedido['telefono'] ?></td>
                 <td><?= $pedido['estado_actual'] ?></td>
                 <td><?= $pedido['observaciones'] ?></td>
-                <td>Q <?= number_format($pedido['total_pedido'], 2) ?></td>
-                <td>
-                    <form action="<?= base_url('asignar_pedido') ?>" method="post">
-                        <input type="hidden" name="pedido_id" value="<?= $pedido['pedido_id'] ?>">
-                        <input type="hidden" name="dpi_empleado" value="<?= $id_empleado ?>">
-                        <button type="submit" class="btn btn-outline-warning">Tomar pedido</button>
+              <td>
+    Q <?= number_format($pedido['total_calculado'], 2) ?>
+</td>
 
-                    </form>
+                <td>
+                   <form action="<?= base_url('asignar_pedido') ?>" method="post">
+    <input type="hidden" name="pedido_id" value="<?= $pedido['pedido_id'] ?>">
+   <input type="hidden" name="dpi_empleado" value="<?= session()->get('dpi_empleado') ?>">
+
+    <button type="submit" class="btn btn-warning">Tomar pedido</button>
+</form>
+
                 </td>
 
             </tr>

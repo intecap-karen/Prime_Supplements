@@ -28,7 +28,9 @@ if (!session()->has('dpi_empleado')) {
     $apellido = session()->get('apellido');
     ?>
 
+
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-black">
             <div class="w-100 d-flex justify-content-between align-items-center px-0">
@@ -77,20 +79,27 @@ if (!session()->has('dpi_empleado')) {
                 <td><?= esc($pedido['direccion_entrega']) ?></td>
                 <td><?= esc($pedido['telefono']) ?></td>
                 <td><?= esc($pedido['observaciones']) ?></td>
-                <td>Q <?= esc(number_format($pedido['total_calculado'], 2)) ?></td>
+<td>
+    Q <?= number_format($pedido['total_calculado'], 2) ?>
+</td>
 
 
-                <td>
-                    <button type="submit" class="btn btn-outline-warning">Tomar pedido</button>
+<td>
+    <a href="<?= base_url('empleado/detallePedido/' . $pedido['pedido_id']) ?>" class="btn btn-info">
+        Ver detalle
+    </a>
 
 
-                    <a href="<?= base_url('empleado/detallePedido/' . $pedido['pedido_id']) ?>"
-                        class="btn btn-outline-info">
-                        Ver Detalle
-                    </a>
+<form action="<?= base_url('asignar_a_mensajero') ?>" method="post" style="display:inline;">
+    <input type="hidden" name="pedido_id" value="<?= $pedido['pedido_id'] ?>">
+    <button type="submit" class="btn btn-success">
+        Completar y enviar pedido
+    </button>
+</form>
+
+</td>
 
 
-                </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
