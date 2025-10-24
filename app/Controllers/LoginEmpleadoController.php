@@ -10,46 +10,58 @@ class LoginEmpleadoController extends BaseController
         return view('login_empleado');
     }
 
+ public function loginempleado()
+    {
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
 
-public function loginempleado()
-{
+        $empleadoModel = new EmpleadoModel();
+        $empleado = $empleadoModel->where('email', $email)
+                                  ->where('contrasenia', $password)
+                                  ->first();
 
-$email = $this->request->getPost('email');
-$password= $this->request->getPost('password');
+        if (!$empleado) {
+            return redirect()->back()->with('error', 'Correo o contraseña incorrectos.');
+        }
 
-$empleadoModel = new EmpleadoModel();
-$empleado = $empleadoModel->where('email', $email)
-->where('contrasenia', $password)->first();
-    
-try {
+        try {
     $session = session();
     $session->set('dpi_empleado', $empleado['dpi_empleado']);
     $session->set('email', $empleado['email']);                                                 
     $session->set('nombre', $empleado['nombre']);
     $session->set('apellido', $empleado['apellido']);   
+
     if ($empleado['rol_id'] == 1) {
-        // Si el rol es 1 (administrador), redirigir a la página de administración
-        return redirect()->to('/administrador'); //'administrador' es el nombre de la ruta que asignamos en routes.php
+        return redirect()->to('/administrador');
     } elseif ($empleado['rol_id'] == 2) {
-        // Si el rol es 2 (usuario), redirigir a la página de usuario
-        return redirect()->to('/empleados'); //'empleados' es el nombre de la ruta que asignamos en routes.php
+        return redirect()->to('/empleados');
+    } elseif ($empleado['rol_id'] == 3) {
+        return redirect()->to('/mensajero_panel');
     } else {
-        // Si el rol no es válido, redirigir al login con un mensaje de error
         return redirect()->back()->with('error', 'Rol de usuario no válido.');
     }
-   
 
 } catch (\Exception $e) {
-    echo "Error al iniciar sesión: " . $e->getMessage();
+    return redirect()->back()->with('error', 'Error al iniciar sesión: ' . $e->getMessage());
+}
+  
 
+           if ($empleado['rol_id'] == 1) {
+    return redirect()->to('/administrador');
+} elseif ($empleado['rol_id'] == 2) {
+    return redirect()->to('/empleados');
+} elseif ($empleado['rol_id'] == 3) {
+    return redirect()->to('/mensajero_panel');
+} else {
+    return redirect()->back()->with('error', 'Rol de usuario no válido.');
+}
+    }
 
-}}
-
-public function logout() {
-        // Cerrar la sesión del cliente
+    // Cerrar sesión
+    public function logout()
+    {
         $session = session();
         $session->destroy();
-        return redirect()->to('/login_empleado');    
-}
-
+        return redirect()->to('/login_empleado');
+    }
 }

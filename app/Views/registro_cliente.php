@@ -82,7 +82,12 @@
         <?= session()->getFlashdata('error') ?>
     </div>
     <?php endif; ?>
-
+<div class="d-flex justify-content-end mt-3">
+        <a href="<?= base_url('login_cliente') ?>" class="btn btn-danger fw-bold px-4 py-2 shadow-sm"
+            onmousedown="this.style.boxShadow='0 0 10px rgba(255,255,255,0.3)'" onmouseup="this.style.boxShadow='none'">
+            ← Volver
+        </a>
+    </div>
     <div class="formulario-cuerpo">
         <form method="post" action="<?=('registrar_cliente') ?>">
             <h2>Regístrate</h2>
@@ -106,7 +111,14 @@
 
             <button type="submit">Registrarse</button>
         </form>
+
+        
     </div>
+
+    
+
+    
+
 </body>
 
 </html>

@@ -65,7 +65,9 @@
                                 <label>Contraseña</label>
                                 <input type="password" name="password" class="form-control">
                             </div>
-                            <a href="">¿Olvidaste tu contraseña?</a>
+                           <a href="<?= base_url('ver-cambio-cliente') ?>">¿Olvidaste tu contraseña?</a>
+
+
                             <br>
                             <br>
 

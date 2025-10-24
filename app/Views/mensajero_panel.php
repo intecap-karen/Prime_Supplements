@@ -10,7 +10,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title> Suplements Prime Empleados Panel </title>
+    <title> Suplements Prime Mensajeria Panel </title>
 </head>
 
 <body>
@@ -88,8 +88,8 @@
                 <!-- Barra lateral -->
                 <div class="col-md-3 col-lg-2 sidebar d-flex flex-column">
                     <h4 class="text-center py-3">Menú</h4>
-                    <a href="<?= base_url('index.php') ?>">Inicio</a>
-                   <a href="<?= base_url('historial') ?>">Mi Historial</a>
+                
+                   <a href="<?= base_url('pedidos_completados') ?>">Mi Historial</a>
                        <a href="<?= base_url('perfil') ?>">Mi perfil</a>
                     <a href="<?= base_url('logout') ?>">Cerrar sesión</a>
                 </div>
@@ -99,67 +99,78 @@
                     <h2>Panel de Control</h2>
 
                     <!-- Cuadros del panel con sus opciones -->
-                    <div class="row mt-4">
-                        <div class="col-md-4">
-                            <a href="<?= base_url('empleado/verPedidos') ?>"
-                                style="text-decoration: none; color: inherit;">
-                                <div class="card card-box text-center">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Pedidos</h5>
-                                        <p class="card-text">Pedidos sin asignar</p>
-                                        <p class="card-text"><?= $Pedidos ?></p>
-                                    </div>
-                                </div>
-                            </a>
+                 
 
-                        </div>
-  <!-- asignados -->
-                        <div class=" col-md-4">
-                            <a href="<?= base_url('pedidos_asignados?dpi_empleado=' .$id_empleado) ?>"
-                                style="text-decoration: none; color: inherit;">
-                                <div class="card card-box text-center">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Pedidos</h5>
-                                <p class="card-text">Tus Pedidos asignados</p>
-                      <p class="card-text"><?= esc($Asignados) ?></p>
-            </div>
-            </div>
-             </a>
 
-            </div>
-        
-        
+         <body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Resumen de Envíos</h2>
 
- 
-
-          <!-- historial -->
-                              <div class=" col-md-4">
-                            <a href="<?= base_url('historial') ?>"
-                                style="text-decoration: none; color: inherit;">
-                                <div class="card card-box text-center">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Historial</h5>
-                                <p class="card-text">Tus Pedidos Completados</p>
-             <p class="card-text"><?= esc($totalFinalizado) ?></p>
-   </div>
+      <div class="row justify-content-center">
+    <!-- Card: Envíos asignados (estado 3) -->
+    <div class="col-md-5 mb-4">
+        <a href="<?= base_url('mensajeria/envios-asignados') ?>" style="text-decoration: none;">
+            <div class="card text-white bg-primary shadow">
+                <div class="card-header fw-bold">Envíos asignados</div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Total en camino</h5>
+                    <p class="card-text display-6"><?= esc($totalEnCamino) ?></p>
+                </div>
             </div>
-             </a>
+        </a>
+    </div>
 
+    <!-- Card: Envíos finalizados (estado 5) -->
+    <div class="col-md-5 mb-4">
+        <a href="<?= base_url('pedidos_completados') ?>" style="text-decoration: none;">
+            <div class="card text-white bg-success shadow">
+                <div class="card-header fw-bold">Envíos finalizados</div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Total entregado</h5>
+                    <p class="card-text display-6"><?= esc($totalFinalizado) ?></p>
+                </div>
             </div>
-        
-        
- 
-<?php if (session()->getFlashdata('mensaje')): ?>
-<script>
-    Swal.fire({
-        icon: 'success',
-        title: '¡Éxito!',
-        text: '<?= session()->getFlashdata('mensaje') ?>',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Aceptar'
-    });
-</script>
-<?php endif; ?>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+        <div class="d-flex justify-content-end">
+            <a href="<?= base_url('empleados') ?>" class="btn btn-outline-dark fw-bold px-4 py-2 shadow-sm">
+                ← Volver
+            </a>
+        </div>
+    </div>
+
+            <!-- Contenido del panel  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -27,4 +27,13 @@ public function obtenerDatos()
             ->where('pedido.dpi_empleado', $dpiEmpleado)
             ->findAll();
     }
+// se coloca aca para que la base de datoos nos diga cuantos hay conel codigo 
+
+public function obtenerAsignados()
+{
+    return $this->where('estado_id', 2)->findAll();
 }
+
+
+}
+
