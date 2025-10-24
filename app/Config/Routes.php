@@ -64,7 +64,7 @@ $routes->post('modificar_producto', 'ProductoController::modificar');
 $routes->get('empleados', 'AdminEmpleadosController::index');
 $routes->post('agregar_empleado', 'AdminEmpleadosController::agregar');
 $routes->get('eliminar_empleado', 'AdminEmpleadosController::eliminar/$1');
-$routes->get('buscar_empleado', 'AdminEmpleadosController::buscar');
+$routes->get('buscar_empleado/(:num)', 'AdminEmpleadosController::buscar/$1');
 $routes->post('modificar_empleado', 'AdminEmpleadosController::modificar');
 
 $routes->get('empleado/verPedidos', 'EmpleadoController::verPedidos');
