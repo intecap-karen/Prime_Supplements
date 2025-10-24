@@ -17,10 +17,10 @@ $routes->post('modificar_estado', 'EstadoController::modificar');
 
 /*Clientes*/
 $routes->get('clientes', 'ClientesController::index');
-$routes->post('agregar_cliente', 'ClienteController::agregar');
-$routes->get('eliminar_cliente', 'ClienteController::eliminar');
-$routes->get('buscar_cliente', 'ClienteController::buscar');
-$routes->post('modificar_cliente', 'ClienteController::modificar');
+$routes->post('agregar_cliente', 'ClientesController::agregar');
+$routes->get('eliminar_cliente', 'ClientesController::eliminar');
+$routes->get('buscar_cliente', 'ClientesController::buscar');
+$routes->post('modificar_cliente', 'ClientesController::modificar');
 
 
 /*metodo_pago*/
@@ -61,12 +61,12 @@ $routes->get('buscar_producto', 'ProductoController::buscar');
 $routes->post('modificar_producto', 'ProductoController::modificar');
 
 /*empleado*/
-$routes->get('empleados', 'EmpleadoController::index');
-$routes->post('agregar_empleado', 'EmpleadoController::agregar');
-$routes->get('eliminar_empleado', 'EmpleadoController::eliminar');
-$routes->get('buscar_empleado', 'EmpleadoController::buscar');
-$routes->post('modificar_empleado', 'EmpleadoController::modificar');
-$routes->get('empleado/verPedidos', 'EmpleadoController::verPedidos');
+$routes->get('empleados', 'EmpleadosController::index');
+$routes->post('agregar_empleado', 'EmpleadosController::agregar');
+$routes->get('eliminar_empleado', 'EmpleadosController::eliminar');
+$routes->get('buscar_empleado', 'EmpleadosController::buscar');
+$routes->post('modificar_empleado', 'EmpleadosController::modificar');
+$routes->get('empleado/verPedidos', 'EmpleadosController::verPedidos');
 
 $routes->get('empleado/detallePedido/(:num)', 'EmpleadoController::detallePedido/$1');
 $routes->get('pedidos_asignados', 'EmpleadoController::verAsignados');
