@@ -25,7 +25,7 @@ class AdminEmpleadosController extends BaseController
         ];
         $empleado->insert($datos);
 
-        return redirect()->route('empleados');
+        return redirect()->route('admin/empleados');
     }
 
     public function eliminar($id) 
@@ -33,7 +33,7 @@ class AdminEmpleadosController extends BaseController
         $empleado = new AdminEmpleadosModel();
         $empleado->delete($id);
         //dos formas de redireccionar 
-        return redirect()->route('empleados');
+        return redirect()->route('admin/empleados');
         //return $this->index();
     }
 
@@ -56,6 +56,6 @@ class AdminEmpleadosController extends BaseController
         ];
         $empleado= new AdminEmpleadosModel();
         $empleado->update($datos['dpi_empleado'], $datos);
-        return redirect()->route('empleados');
+        return redirect()->route('admin/empleados');
     }
 }

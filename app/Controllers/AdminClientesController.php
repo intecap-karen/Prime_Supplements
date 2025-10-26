@@ -24,7 +24,7 @@ class AdminClientesController extends BaseController
             'fecha_nac' => $this->request->getPost('dt_nacimiento'),
         ];
         $cliente->insert($datos);
-        return redirect()->route('clientes');
+        return redirect()->route('admin/clientes');
     }
 
     public function eliminar($id) 
@@ -32,7 +32,7 @@ class AdminClientesController extends BaseController
         $cliente = new AdminClientesModel();
         $cliente->delete($id);
         //dos formas de redireccionar 
-        return redirect()->route('clientes');
+        return redirect()->route('admin/clientes');
         //return $this->index();
     }
 
@@ -55,6 +55,6 @@ class AdminClientesController extends BaseController
         ];
         $cliente= new AdminClientesModel();
         $cliente->update($datos['cliente_id'], $datos);
-        return redirect()->route('clientes');
+        return redirect()->route('admin/clientes');
     }
 }
