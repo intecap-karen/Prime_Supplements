@@ -32,7 +32,7 @@ class LoginEmpleadoController extends BaseController
     $session->set('apellido', $empleado['apellido']);   
 
     if ($empleado['rol_id'] == 1) {
-        return redirect()->to('/administrador');
+        return redirect()->to('admin/empleados');
     } elseif ($empleado['rol_id'] == 2) {
         return redirect()->to('/empleados');
     } elseif ($empleado['rol_id'] == 3) {
