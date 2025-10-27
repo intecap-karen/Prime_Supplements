@@ -26,9 +26,9 @@
             <img src="<?= base_url('images/logo.png') ?>" alt="Logo de la empresa" class="logo">
             Prime Supplements
             <div class="link-container">
-                <a href="<?=base_url('categorias')?>" class="header-links">Categorias</a>
-                <a href="<?=base_url('marcas')?>" class="header-links">Marcas</a>
-                <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
+                <a href="<?=base_url('admin/categorias')?>" class="header-links">Categorias</a>
+                <a href="<?=base_url('admin/marcas')?>" class="header-links">Marcas</a>
+                <a href="<?=base_url('admin/productos')?>" class="header-links">Productos</a>
                 <a href="<?=base_url('admin/clientes')?>" class="header-links">Clientes</a>
                 <a href="<?=base_url('admin/empleados')?>" class="header-links">Empleados</a>
             </div>
@@ -87,7 +87,7 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="<?= base_url('agregar_producto') ?>" method="post">
+                                            <form action="<?= base_url('admin/agregar_producto') ?>" method="post">
                                                 <label for="producto_id" class="for-label">Producto_id</label>
                                                 <input type="text" name="producto_id" id="producto_id" class="form-control">
                                                 <label for="nombre" class="for-label">nombre</label>
@@ -111,10 +111,10 @@
                             </div>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="<?= base_url('eliminar_producto/' . $producto['producto_id']) ?>"
+                            <a href="<?= base_url('admin/eliminar_producto/' . $producto['producto_id']) ?>"
                                 class="btn btn-outline-info">Eliminar</a>
 
-                            <a href="<?= base_url('buscar_producto/' . $producto['producto_id']) ?>"
+                            <a href="<?= base_url('admin/buscar_producto/' . $producto['producto_id']) ?>"
                                 class="btn btn-outline-info">Modificar</a>
                         </div>
 

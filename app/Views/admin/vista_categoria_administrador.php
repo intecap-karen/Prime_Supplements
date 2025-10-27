@@ -26,13 +26,13 @@
             <img src="<?= base_url('images/logo.png') ?>" alt="Logo de la empresa" class="logo">
             Prime Supplements
             <div class="link-container">
-                <a href="<?=base_url('categorias')?>" class="header-links">Categorias</a>
-                <a href="<?=base_url('marcas')?>" class="header-links">Marcas</a>
-                <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
+                <a href="<?=base_url('admin/categorias')?>" class="header-links">Categorias</a>
+                <a href="<?=base_url('admin/marcas')?>" class="header-links">Marcas</a>
+                <a href="<?=base_url('admin/productos')?>" class="header-links">Productos</a>
                 <a href="<?=base_url('admin/clientes')?>" class="header-links">Clientes</a>
                 <a href="<?=base_url('admin/empleados')?>" class="header-links">Empleados</a>
             </div>
-            <<form method="get" action="<?= base_url('buscar_producto') ?>" class="search-bar">
+            <form method="get" action="<?= base_url('buscar_producto') ?>" class="search-bar">
                 <input type="text" class="form-control" placeholder="Buscar">
                 <i class="bi bi-search"></i>
                 </form>
@@ -83,7 +83,7 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="<?= base_url('agregar_categoria') ?>" method="post">
+                                            <form action="<?= base_url('admin/agregar_categoria') ?>" method="post">
                                                 <label for="categoria_id" class="for-label">categoria_id</label>
                                                 <input type="text" name="categoria_id" id="categoria_id" class="form-control">
                                                 <label for="nombre" class="for-label">categoria</label>
@@ -98,10 +98,10 @@
                             </div>
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="<?= base_url('eliminar_categoria/' . $datos['categoria_id']) ?>"
+                            <a href="<?= base_url('admin/eliminar_categoria/' . $datos['categoria_id']) ?>"
                                 class="btn btn-outline-info">Eliminar</a>
 
-                            <a href="<?= base_url('buscar_categoria/' . $datos['categoria_id']) ?>"
+                            <a href="<?= base_url('admin/buscar_categoria/' . $datos['categoria_id']) ?>"
                                 class="btn btn-outline-info">Modificar</a>
                         </div>
 

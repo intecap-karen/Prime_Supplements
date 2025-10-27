@@ -1,0 +1,13 @@
+<?php
+namespace App\Models\admin;
+    use CodeIgniter\Model;
+    class AdminCategoriasModel extends Model
+    {
+        protected $table         = 'cat_productos';
+        protected $primaryKey    = 'categoria_id';
+        protected $allowedFields = [
+            'categoria_id','categoria'
+        ];
+        //protected $returnType    = \App\Entities.User::class;
+        //protected $useTimestamps = true;
+    }   

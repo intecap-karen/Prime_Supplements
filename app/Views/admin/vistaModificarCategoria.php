@@ -17,9 +17,9 @@
             <img src="<?= base_url('images/logo.png') ?>" alt="Logo de la empresa" class="logo">
             Prime Supplements
             <div class="link-container">
-                <a href="<?=base_url('categorias')?>" class="header-links">Categorias</a>
-                <a href="<?=base_url('marcas')?>" class="header-links">Marcas</a>
-                <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
+                <a href="<?=base_url('admin/categorias')?>" class="header-links">Categorias</a>
+                <a href="<?=base_url('admin/marcas')?>" class="header-links">Marcas</a>
+                <a href="<?=base_url('admin/productos')?>" class="header-links">Productos</a>
                 <a href="<?=base_url('admin/clientes')?>" class="header-links">Clientes</a>
                 <a href="<?=base_url('admin/empleados')?>" class="header-links">Empleados</a>
             </div>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-4 offset-4">
                     <h1>Modificar Categoria</h1>
-                    <form action="<?= base_url('modificar_categoria') ?>" method="post">
+                    <form action="<?= base_url('admin/modificar_categoria') ?>" method="post">
                         <input type="hidden" name="categoria" value="<?= esc($datos['cat_productos']) ?>">
                         <label for="numbre" name="marca_id" class="form-label">Marca</label>
 

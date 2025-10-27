@@ -17,9 +17,9 @@
             <img src="<?= base_url('images/logo.png') ?>" alt="Logo de la empresa" class="logo">
             Prime Supplements
             <div class="link-container">
-                <a href="<?=base_url('categorias')?>" class="header-links">Categorias</a>
-                <a href="<?=base_url('marcas')?>" class="header-links">Marcas</a>
-                <a href="<?=base_url('productos')?>" class="header-links">Productos</a>
+                <a href="<?=base_url('admin/categorias')?>" class="header-links">Categorias</a>
+                <a href="<?=base_url('admin/marcas')?>" class="header-links">Marcas</a>
+                <a href="<?=base_url('admin/productos')?>" class="header-links">Productos</a>
                 <a href="<?=base_url('admin/clientes')?>" class="header-links">Clientes</a>
                 <a href="<?=base_url('admin/empleados')?>" class="header-links">Empleados</a>
             </div>
@@ -64,7 +64,7 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?= base_url('agregar_marca') ?>" method="post">
+                        <form action="<?= base_url('admin/agregar_marca') ?>" method="post">
                             <label for="marca_id" class="for-label">Marca_id</label>
                             <input type="number" name="marca_id" id="marca_id" class="form-control" required>
 
@@ -93,10 +93,10 @@
                             <th class="table-active"><?= esc($marca['marca_nombre']) ?></th>
                             <th class="table-active text-end">
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="<?= base_url('eliminar_marca/' . $marca['marca_id']) ?>"
+                                    <a href="<?= base_url('admin/eliminar_marca/' . $marca['marca_id']) ?>"
                                         class="btn btn-outline-info">Eliminar</a>
 
-                                    <a href="<?= base_url('buscar_marca/' . $marca['marca_id']) ?>"
+                                    <a href="<?= base_url('admin/buscar_marca/' . $marca['marca_id']) ?>"
                                         class="btn btn-outline-info">Modificar</a>
                                 </div>
                             </th>

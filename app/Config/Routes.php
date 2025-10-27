@@ -5,8 +5,51 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'HomeController::index'); // Página principal
+$routes->get('nosotros', function () {
+    return view('nosotros');
+});
 
+/* Carrito y pedidos del cliente */
+$routes->get('carrito', 'CarritoController::ver');
+$routes->post('carrito/agregar', 'CarritoController::agregar');
+$routes->get('carrito/completar', 'CarritoController::completar');
+$routes->post('pedido/crear', 'PedidoController::crear');
+
+/* Métodos de pago */
+$routes->get('metodos_pago', 'MetodoPagoController::index');
+$routes->post('agregar_metodo_pago', 'MetodoPagoController::agregar');
+$routes->get('eliminar_metodo_pago', 'MetodoPagoController::eliminar');
+$routes->get('buscar_metodo_pago', 'MetodoPagoController::buscar');
+$routes->post('modificar_metodo_pago', 'MetodoPagoController::modificar');
+
+/* Pagos */
+$routes->get('pagos', 'PagoController::index');
+$routes->post('agregar_pago', 'PagoController::agregar');
+$routes->get('eliminar_pago', 'PagoController::eliminar');
+$routes->get('buscar_pago', 'PagoController::buscar');
+$routes->post('modificar_pago', 'PagoController::modificar');
+
+/* Productos*/
+$routes->get('productos', 'ProductoController::index');
+$routes->post('agregar_producto', 'ProductoController::agregar');
+$routes->get('eliminar_producto', 'ProductoController::eliminar');
+$routes->get('buscar_producto', 'ProductoController::buscar');
+$routes->post('modificar_producto', 'ProductoController::modificar');
+
+/* Categorías */
+$routes->get('categorias', 'CategoriaController::index');
+$routes->post('agregar_categoria', 'CategoriaController::agregar');
+$routes->get('eliminar_categoria', 'CategoriaController::eliminar');
+$routes->get('buscar_categoria', 'CategoriaController::buscar');
+$routes->post('modificar_categoria', 'CategoriaController::modificar');
+
+/* Marcas*/
+$routes->get('marcas', 'MarcaController::index');
+$routes->post('agregar_marca', 'MarcaController::agregar');
+$routes->get('eliminar_marca', 'MarcaController::eliminar');
+$routes->get('buscar_marca', 'MarcaController::buscar');
+$routes->post('modificar_marca', 'MarcaController::modificar');
 
 /*Clientes Admin*/
 $routes->get('admin/clientes', 'admin\AdminClientesController::index');
@@ -23,28 +66,28 @@ $routes->get('buscar_empleado/(:num)', 'admin\AdminEmpleadosController::buscar/$
 $routes->post('modificar_empleado', 'admin\AdminEmpleadosController::modificar');
 
 /*productos Admin*/
-$routes->get('ver_productos', 'admin\ProductoController::verProductos');
-$routes->get('productos', 'admin\ProductoController::index');
-$routes->post('agregar_producto', 'admin\ProductoController::agregar');
-$routes->get('eliminar_producto/(:num)', 'admin\ProductoController::eliminar/$1');
-$routes->get('buscar_producto/(:num)', 'admin\ProductoController::buscar/$1');
-$routes->post('modificar_producto', 'admin\ProductoController::modificar');
+$routes->get('ver_productos', 'admin\AdminProductosController::verProductos');
+$routes->get('admin/productos', 'admin\AdminProductosController::index');
+$routes->post('admin/agregar_producto', 'admin\AdminProductosController::agregar');
+$routes->get('admin/eliminar_producto/(:num)', 'admin\AdminProductosController::eliminar/$1');
+$routes->get('admin/buscar_producto/(:num)', 'admin\AdminProductosController::buscar/$1');
+$routes->post('admin/modificar_producto', 'admin\AdminProductosController::modificar');
 
 /*marcas Admin*/
-$routes->get('ver_marcas', 'admin\MarcaController::verMarcas');
-$routes->get('marcas', 'admin\MarcaController::index');
-$routes->post('agregar_marca', 'admin\MarcaController::agregar');
-$routes->get('eliminar_marca/(:num)', 'admin\MarcaController::eliminar/$1');
-$routes->get('buscar_marca/(:num)', 'admin\MarcaController::buscar/$1');
-$routes->post('modificar_marca', 'admin\MarcaController::modificar');
+$routes->get('ver_marcas', 'admin\AdminMarcasController::verMarcas');
+$routes->get('admin/marcas', 'admin\AdminMarcasController::index');
+$routes->post('admin/agregar_marca', 'admin\AdminMarcasController::agregar');
+$routes->get('admin/eliminar_marca/(:num)', 'admin\AdminMarcasController::eliminar/$1');
+$routes->get('admin/buscar_marca/(:num)', 'admin\AdminMarcasController::buscar/$1');
+$routes->post('admin/modificar_marca', 'admin\AdminMarcasController::modificar');
 
 /*categorias Admin*/
-$routes->get('ver_categorias', 'admin\CategoriasController::verCategorias'); 
-$routes->get('categorias', 'admin\CategoriasController::index');
-$routes->post('agregar_categoria', 'admin\CategoriasController::agregar');
-$routes->get('eliminar_categoria/(:num)', 'admin\CategoriasController::eliminar/$1');
-$routes->get('buscar_categoria/(:num)', 'admin\CategoriasController::buscar/$1');
-$routes->post('modificar_categoria', 'admin\CategoriasController::modificar');
+$routes->get('ver_categorias', 'admin\AdminCategoriasController::verCategorias'); 
+$routes->get('admin/categorias', 'admin\AdminCategoriasController::index');
+$routes->post('admin/agregar_categoria', 'admin\AdminCategoriasController::agregar');
+$routes->get('admin/eliminar_categoria/(:num)', 'admin\AdminCategoriasController::eliminar/$1');
+$routes->get('admin/buscar_categoria/(:num)', 'admin\AdminCategoriasController::buscar/$1');
+$routes->post('admin/modificar_categoria', 'admin\AdminCategoriasController::modificar');
 
 /*empleado panel*/
 $routes->get('empleados', 'EmpleadoController::index');
